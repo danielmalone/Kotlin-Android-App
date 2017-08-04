@@ -13,11 +13,20 @@ class MainActivity : AppCompatActivity() {
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
 
+        val fab = findViewById(R.id.fab)
         var message = findViewById(R.id.message) as TextView
 
         val user = User("Daniel", "Malone")
         val daniel = user.firstName.plus(" ").plus(user.lastName)
 
         message.text = daniel
+
+        val mel = User("Mel", "Malone")
+
+        fab.setOnClickListener {
+            var melMessage = mel.firstName
+                    .plus("asdf here ok?")
+            message.text = melMessage
+        }
     }
 }
